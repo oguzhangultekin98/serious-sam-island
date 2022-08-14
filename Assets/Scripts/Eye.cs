@@ -21,7 +21,12 @@ public class Eye : MonoBehaviour
 		sphereCollider = GetComponent<SphereCollider>();
 	}
 
-	private void OnTriggerEnter(Collider other)
+    private void Update()
+    {
+		Debug.Log(targets.Count);
+    }
+
+    private void OnTriggerEnter(Collider other)
 	{
 		if (other.TryGetComponent(out ITargetFaction target) && !targets.Contains(target) && target.IsAlive)
 		{

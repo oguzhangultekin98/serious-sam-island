@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8755041619620365865}
   - component: {fileID: 8831469437070714115}
   - component: {fileID: 1609684986590069806}
+  - component: {fileID: 4214192390664397681}
   m_Layer: 6
   m_Name: CharacterEye
   m_TagString: Untagged
@@ -58,3 +59,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 12
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &4214192390664397681
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8121543598666675348}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
