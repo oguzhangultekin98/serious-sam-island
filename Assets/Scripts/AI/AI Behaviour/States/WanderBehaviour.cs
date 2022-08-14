@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WanderBehaviour : MonoBehaviour, IState
+public class WanderBehaviour : IState
 {
 	public bool canTransitionItSelf { get { return false; } }
 
@@ -17,6 +17,7 @@ public class WanderBehaviour : MonoBehaviour, IState
 
 	public void Tick()
 	{
+		Debug.Log("HERE");
 		if (_aiMovement.IsMoving)
 			return;
 

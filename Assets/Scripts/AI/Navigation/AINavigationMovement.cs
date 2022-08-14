@@ -26,7 +26,7 @@ public class AINavigationMovement : MonoBehaviour
 	void Start()
 	{
 		agent = GetComponent<NavMeshAgent>();
-		animator = GetComponent<Animator>();
+		animator = GetComponentInChildren<Animator>();
 		agent.updateRotation = false;
 		agent.speed = movementSpeed;
 		maxSpeed = Mathf.Max(movementSpeed, runAwaySpeed);

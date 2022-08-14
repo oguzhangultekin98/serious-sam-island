@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ShoutgunCollectable : WeaponBase, ICollectible
 {
-    public Faction Faction => Faction.Players;
+    public Faction Faction => Faction.Player;
     public event Action<ICollectible> OnCollected;
 
     // Start is called before the first frame update
