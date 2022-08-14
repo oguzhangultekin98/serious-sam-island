@@ -34,7 +34,7 @@ public class AINavigationMovement : MonoBehaviour
 		randomMover = AINavigation.Instance.GetRandomMover();
 	}
 
-	private void OnDie(IAiTarget obj)
+	private void OnDie(ITargetFaction obj)
 	{
 		agent.isStopped = true;
 	}
