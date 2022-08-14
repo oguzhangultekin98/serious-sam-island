@@ -6,22 +6,21 @@ public class WanderBehaviour : IState
 {
 	public bool canTransitionItSelf { get { return false; } }
 
-	private AIEye _eye;
-	private AINavigationMovement _aiMovement;
+	private Eye eye;
+	private AINavigationMovement aiMovement;
 
-	public WanderBehaviour(AIEye eye, AINavigationMovement aiNavigationMovement)
+	public WanderBehaviour(Eye eye, AINavigationMovement aiNavigationMovement)
 	{
-		_eye = eye;
-		_aiMovement = aiNavigationMovement;
+		this.eye = eye;
+		aiMovement = aiNavigationMovement;
 	}
 
 	public void Tick()
 	{
-		Debug.Log("HERE");
-		if (_aiMovement.IsMoving)
+		if (aiMovement.IsMoving)
 			return;
 
-		_aiMovement.GoToRandomLocation();
+		aiMovement.GoToRandomLocation();
 	}
 
 	public void OnEnter()

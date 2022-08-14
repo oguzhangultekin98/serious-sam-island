@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class AIBehaviourHandler : MonoBehaviour
 {
-	[SerializeField] private AIEye eye;
+	[SerializeField] private Eye eye;
 	[Space]
 	[SerializeField] private string DEBUG_currentBehaviour;
 
