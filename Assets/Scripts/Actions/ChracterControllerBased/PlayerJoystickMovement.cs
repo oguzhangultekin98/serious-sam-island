@@ -15,7 +15,8 @@ public class PlayerJoystickMovement : CharacterControllerMovementBase
     {
         if (!Activated)
             return;
-        GetInput();
+        var joyStickInput = GetInput();
+        MoveTo(joyStickInput);
         base.Update();
     }
 
@@ -27,16 +28,8 @@ public class PlayerJoystickMovement : CharacterControllerMovementBase
             _joystick = FindObjectOfType<VariableJoystick>();
     }
 
-    public void GetInput()
+    private Vector3 GetInput()
     {
-        Vector3 movData;
-
-        var joystickMov = new Vector3(_joystick.Horizontal, 0, _joystick.Vertical);
-
-
-        movData = joystickMov;
-        Debug.Log(movData);
-
-        MoveTo(movData);
+        return  new Vector3(_joystick.Horizontal, 0, _joystick.Vertical);
     }
 }

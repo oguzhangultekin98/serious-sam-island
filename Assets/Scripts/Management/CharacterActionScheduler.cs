@@ -27,8 +27,7 @@ public class CharacterActionScheduler : ActionSchedulerBase
     {
         StartAction<PlayerJoystickMovement>();
 
-        //Activate AI Here
-        //if (CurrentAction == null)
-            //StartAction<AINavigationMovement>();
+        if (CurrentAction == null)
+            StartAction<AINavigationMovement>();
     }
 }

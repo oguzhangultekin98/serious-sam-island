@@ -6,13 +6,13 @@ public abstract class CharacterControllerMovementBase : MovementBase,
 {
     private GravityHolder _gravityHolder = new GravityHolder();
 
-    protected Vector3 impact;
-    public CharacterController MovementComponent { get; private set; }
     public bool Activated { get; private set; }
-
-    private Animator _animator;
+    public CharacterController MovementComponent { get; private set; }
 
     [SerializeField] protected TransformInterpolator transformInterpolater;
+
+    private Animator _animator;
+    protected Vector3 impact;
 
     protected virtual void Awake()
     {
@@ -23,12 +23,6 @@ public abstract class CharacterControllerMovementBase : MovementBase,
         transformInterpolater.oldQuaternion = transform.rotation;
     }
 
-    private void OnFallMove(Vector3 normalizedVollisionVector)
-    {
-        AddImpact(new Vector3(-normalizedVollisionVector.x, 1f, -normalizedVollisionVector.z), 5);
-    }
-
-  
     protected virtual void Update()
     {
         if (!Activated)
@@ -82,8 +76,6 @@ public abstract class CharacterControllerMovementBase : MovementBase,
         _gravityHolder.gravityCoefficient = 0f;
     }
 
-
-    //protected abstract void Rotate(Vector3 data);
     public void Rotate(Vector3 data)
     {
         var position = transform.position;
@@ -103,7 +95,6 @@ public abstract class CharacterControllerMovementBase : MovementBase,
 
     public void Deactivate()
     {
-        //  MovementComponent.enabled = false;
         _animator.SetFloat("Speed", 0);
         Activated = false;
     }
